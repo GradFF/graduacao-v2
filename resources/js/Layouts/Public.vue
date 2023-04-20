@@ -11,7 +11,7 @@ const navIsOpen = ref(false);
         <div class="relative overflow-auto">
             <div class="relative lg:flex lg:items-start">
                 <div
-                    class="fixed inset-0 bg-base-950/30"
+                    class="fixed inset-0 bg-base-950/30 lg:hidden cursor-pointer"
                     @click.prevent="navIsOpen = !navIsOpen"
                     :class="navIsOpen ? 'translate-x-0' : '-translate-x-full'"
                 ></div>
@@ -21,7 +21,7 @@ const navIsOpen = ref(false);
                             ? 'translate-x-0'
                             : '-translate-x-full lg:translate-x-0'
                     "
-                    class="fixed top-0 bottom-0 left-0 z-20 h-screen w-80 bg-gradient-to-b from-base-200 to-base-100 dark:from-base-950 dark:to-base-900 transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full"
+                    class="fixed top-0 bottom-0 left-0 z-20 h-screen w-80 bg-gradient-to-b from-base-200 to-base-100 dark:from-base-950 dark:to-base-900 transition-all duration-300 overflow-y-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full"
                 >
                     <div class="relative min-h-0 flex-1 flex flex-col w-80">
                         <Link href="/" class="py-8 px-4">
@@ -29,7 +29,7 @@ const navIsOpen = ref(false);
                             <span>Faculdade de Farmacia | UFRJ</span>
                         </Link>
                         <div class="overflow-y-auto overflow-x-hidden px-4">
-                            <nav class="block mt-8">
+                            <!-- <nav class="block mt-8">
                                 <div>
                                     <p
                                         class="w-full pb-2 mb-4 ml-2 font-normal text-base-500 border-b-2 border-base-300 dark:border-base-700 text-md"
@@ -46,6 +46,96 @@ const navIsOpen = ref(false);
                                         href="/about-us"
                                         >About</Link
                                     >
+                                </div>
+                            </nav> -->
+                            <nav class="">
+                                <div class="mb-4">
+                                    <b
+                                        class="px-2 border-l-2 border-primary-500 text-primary-800 font-semibold text-lg"
+                                    >
+                                        Pages
+                                    </b>
+
+                                    <div
+                                        class="flex flex-col mt-4 ml-4 divide-y divide-base-300"
+                                    >
+                                        <Link
+                                            href="/"
+                                            class="inline-flex items-center hover:text-primary-500 transition-colors duration-200 py-2"
+                                        >
+                                            <Icons
+                                                class="w-4 h-4"
+                                                name="chevron-right"
+                                            />
+                                            <span class="ml-2">Home</span>
+                                        </Link>
+                                        <Link
+                                            href="/about"
+                                            class="inline-flex items-center hover:text-primary-500 transition-colors duration-200 py-2"
+                                        >
+                                            <Icons
+                                                class="w-4 h-4"
+                                                name="chevron-right"
+                                            />
+                                            <span class="ml-2">About</span>
+                                        </Link>
+                                        <Link
+                                            href="/about"
+                                            class="inline-flex items-center hover:text-primary-500 transition-colors duration-200 py-2"
+                                        >
+                                            <Icons
+                                                class="w-4 h-4"
+                                                name="chevron-right"
+                                            />
+                                            <span class="ml-2">Login</span>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <b
+                                        class="px-2 border-l-2 border-primary-500 text-primary-800 font-semibold text-lg"
+                                    >
+                                        Categories
+                                    </b>
+
+                                    <div
+                                        class="flex flex-col mt-4 ml-4 divide-y divide-base-300"
+                                    >
+                                        <Link
+                                            href="#"
+                                            class="inline-flex items-center hover:text-primary-500 transition-colors duration-200 py-2"
+                                        >
+                                            <Icons
+                                                class="w-4 h-4"
+                                                name="chevron-right"
+                                            />
+                                            <span class="ml-2"
+                                                >Architecture</span
+                                            >
+                                        </Link>
+                                        <Link
+                                            href="#"
+                                            class="inline-flex items-center hover:text-primary-500 transition-colors duration-200 py-2"
+                                        >
+                                            <Icons
+                                                class="w-4 h-4"
+                                                name="chevron-right"
+                                            />
+                                            <span class="ml-2">Building</span>
+                                        </Link>
+                                        <Link
+                                            href="#"
+                                            class="inline-flex items-center hover:text-primary-500 transition-colors duration-200 py-2"
+                                        >
+                                            <Icons
+                                                class="w-4 h-4"
+                                                name="chevron-right"
+                                            />
+                                            <span class="ml-2"
+                                                >Construction</span
+                                            >
+                                        </Link>
+                                    </div>
                                 </div>
                             </nav>
                         </div>
@@ -135,6 +225,9 @@ const navIsOpen = ref(false);
                 </header>
                 <main class="flex-1">
                     <div class="max-w-screen-lg px-8 sm:px-16 lg:px-24">
+                        <div
+                            class="flex item-center justify-between mt-8"
+                        ></div>
                         <section class="mt-8 md:mt-16">
                             <slot />
                         </section>

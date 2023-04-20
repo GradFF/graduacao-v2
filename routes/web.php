@@ -7,6 +7,6 @@ Route::get('/', function () {
     return Inertia::render('Home', ['test' => 'working']);
 });
 
-Route::get('/about-us', function () {
+Route::get('/about', function () {
     return Inertia::render('About', ['about_us' => 'working']);
 });

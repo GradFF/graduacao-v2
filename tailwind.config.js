@@ -11,9 +11,12 @@ module.exports = {
         colors: {
             transparent: "transparent",
             base: colors.slate,
-            primary: colors.indigo,
+            primary: colors.sky,
+
+            danger: colors.yellow,
         },
+        fontFamily: { sans: ["Poppins", "sans-serif"] },
         extend: {},
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
 };
